@@ -1,0 +1,206 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Recursos/Background/bg_layer1.png" type="Texture" id=1]
+[ext_resource path="res://Recursos/Background/bg_layer2.png" type="Texture" id=2]
+[ext_resource path="res://Recursos/Background/bg_layer3.png" type="Texture" id=3]
+[ext_resource path="res://Recursos/Background/bg_layer4.png" type="Texture" id=4]
+[ext_resource path="res://juego/Menus/Botones/BotonMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Recursos/HUD/back_button.png" type="Texture" id=6]
+[ext_resource path="res://Recursos/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 980, 980 )
+modulate_color = Color( 0.4, 0.4, 0.4, 1 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 980, 980 )
+modulate_color = Color( 0.164706, 0.164706, 0.164706, 1 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 980, 980 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 8 )
+
+[node name="SelectLevel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, -500 )
+
+[node name="ParallaxFondo" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxFondo"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesLejanas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesLejanas"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesMedias" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesMedias"]
+margin_left = -22.4492
+margin_top = -702.661
+margin_right = 2025.55
+margin_bottom = 1345.34
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesCercanas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesCercanas"]
+margin_left = 0.830563
+margin_top = -837.357
+margin_right = 2048.83
+margin_bottom = 1210.64
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 100.0
+margin_bottom = -100.0
+size_flags_vertical = 3
+custom_constants/margin_right = 32
+custom_constants/margin_left = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+margin_left = 32.0
+margin_right = 1248.0
+margin_bottom = 520.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 5
+
+[node name="BotonMenu" parent="MarginContainer/GridContainer" instance=ExtResource( 5 )]
+margin_right = 227.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+text = "lvl 1"
+
+[node name="BotonMenu2" parent="MarginContainer/GridContainer" instance=ExtResource( 5 )]
+margin_left = 247.0
+margin_right = 474.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+text = "lvl 2"
+
+[node name="BotonMenu3" parent="MarginContainer/GridContainer" instance=ExtResource( 5 )]
+margin_left = 494.0
+margin_right = 721.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+text = "lvl 3"
+
+[node name="BotonMenu4" parent="MarginContainer/GridContainer" instance=ExtResource( 5 )]
+margin_left = 741.0
+margin_right = 968.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+text = "lvl 4"
+
+[node name="BotonMenu5" parent="MarginContainer/GridContainer" instance=ExtResource( 5 )]
+margin_left = 988.0
+margin_right = 1215.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+text = "lvl 5"
+
+[node name="BotonMenu6" parent="MarginContainer/GridContainer" instance=ExtResource( 5 )]
+margin_top = 270.0
+margin_right = 227.0
+margin_bottom = 520.0
+size_flags_horizontal = 3
+text = "lvl 6"
+
+[node name="BotonMenu7" parent="MarginContainer/GridContainer" instance=ExtResource( 5 )]
+margin_left = 247.0
+margin_top = 270.0
+margin_right = 474.0
+margin_bottom = 520.0
+size_flags_horizontal = 3
+text = "lvl 7"
+
+[node name="BotonMenu8" parent="MarginContainer/GridContainer" instance=ExtResource( 5 )]
+margin_left = 494.0
+margin_top = 270.0
+margin_right = 721.0
+margin_bottom = 520.0
+size_flags_horizontal = 3
+text = "lvl 8"
+
+[node name="BotonMenu9" parent="MarginContainer/GridContainer" instance=ExtResource( 5 )]
+margin_left = 741.0
+margin_top = 270.0
+margin_right = 968.0
+margin_bottom = 520.0
+size_flags_horizontal = 3
+text = "lvl 9"
+
+[node name="BotonMenu10" parent="MarginContainer/GridContainer" instance=ExtResource( 5 )]
+margin_left = 988.0
+margin_top = 270.0
+margin_right = 1215.0
+margin_bottom = 520.0
+size_flags_horizontal = 3
+text = "lvl ???"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1189.0
+margin_top = 638.0
+margin_right = 895.0
+margin_bottom = 904.0
+rect_scale = Vector2( 0.05, 0.05 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonMenu" type="Button" parent="VBoxContainer"]
+self_modulate = Color( 0.584314, 0.439216, 0.717647, 1 )
+margin_right = 986.0
+margin_bottom = 986.0
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+text = "texto"
+__meta__ = {
+"_edit_use_anchors_": false
+}

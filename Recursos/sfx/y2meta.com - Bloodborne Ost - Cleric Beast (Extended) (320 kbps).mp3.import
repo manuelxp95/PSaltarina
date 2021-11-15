@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/y2meta.com - Bloodborne Ost - Cleric Beast (Extended) (320 kbps).mp3-643f77fd6e70694a42438dfa5ef7bc0a.mp3str"
+
+[deps]
+
+source_file="res://Recursos/sfx/y2meta.com - Bloodborne Ost - Cleric Beast (Extended) (320 kbps).mp3"
+dest_files=[ "res://.import/y2meta.com - Bloodborne Ost - Cleric Beast (Extended) (320 kbps).mp3-643f77fd6e70694a42438dfa5ef7bc0a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

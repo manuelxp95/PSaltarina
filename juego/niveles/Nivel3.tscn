@@ -1,0 +1,122 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://juego/niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/plataformas/PlataformaLargaPiedra.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/objetos/ZanahoriaLlave.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/personaje/Saltarina.tscn" type="PackedScene" id=4]
+[ext_resource path="res://juego/objetos/Portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://juego/objetos/MonedaPlata.tscn" type="PackedScene" id=6]
+[ext_resource path="res://juego/plataformas/PlataformaNieve.tscn" type="PackedScene" id=7]
+[ext_resource path="res://juego/enemigos/Pinchon.tscn" type="PackedScene" id=8]
+[ext_resource path="res://juego/objetos/PlataformaTrampa.tscn" type="PackedScene" id=9]
+[ext_resource path="res://juego/plataformas/PlataformaCortaMadera.tscn" type="PackedScene" id=10]
+[ext_resource path="res://juego/plataformas/PlataformaCesped.tscn" type="PackedScene" id=11]
+[ext_resource path="res://juego/objetos/MonedaBronce.tscn" type="PackedScene" id=12]
+[ext_resource path="res://juego/Pinchos.tscn" type="PackedScene" id=13]
+[ext_resource path="res://juego/objetos/PlataformaImpulora.tscn" type="PackedScene" id=14]
+[ext_resource path="res://juego/niveles/Camera2D.gd" type="Script" id=15]
+
+[sub_resource type="Animation" id=1]
+resource_name = "show"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 565.781, 464.374 ), Vector2( 1872.52, 478.516 ) ]
+}
+
+[node name="Nivel3" instance=ExtResource( 1 )]
+nivel_actual = "res://juego/niveles/Nivel3.tscn"
+
+[node name="Plataforma" parent="PlataformasNormales" index="0" instance=ExtResource( 7 )]
+position = Vector2( 1413.63, 483.81 )
+
+[node name="PlataformaCesped" parent="PlataformasNormales" index="1" instance=ExtResource( 11 )]
+position = Vector2( 2082, 442 )
+
+[node name="PlataformaLargaPiedra" parent="PlataformasLargas" index="0" instance=ExtResource( 2 )]
+position = Vector2( 698.211, 624.794 )
+
+[node name="PlataformaCortaMadera" parent="PlataformaCorta" index="0" instance=ExtResource( 10 )]
+position = Vector2( 1753.81, 622.401 )
+
+[node name="PlataformaCortaMadera3" parent="PlataformaCorta" index="1" instance=ExtResource( 10 )]
+position = Vector2( 2152.62, 254.705 )
+
+[node name="PlataformaCortaMadera2" parent="PlataformaCorta" index="2" instance=ExtResource( 10 )]
+position = Vector2( 2425.81, 628.401 )
+
+[node name="Pinchon" parent="Enemigos" index="0" instance=ExtResource( 8 )]
+position = Vector2( 1315.04, 448.538 )
+
+[node name="MonedaPlata" parent="Monedas" index="0" instance=ExtResource( 6 )]
+position = Vector2( 22.6785, 652.639 )
+
+[node name="MonedaPlata4" parent="Monedas" index="1" instance=ExtResource( 6 )]
+position = Vector2( 1188.68, 432.639 )
+
+[node name="MonedaPlata2" parent="Monedas" index="2" instance=ExtResource( 6 )]
+position = Vector2( 65.5159, 597.203 )
+
+[node name="MonedaPlata3" parent="Monedas" index="3" instance=ExtResource( 6 )]
+position = Vector2( 108.353, 652.639 )
+
+[node name="MonedaBronce" parent="Monedas" index="4" instance=ExtResource( 12 )]
+position = Vector2( 1366.71, 349.918 )
+
+[node name="MonedaBronce4" parent="Monedas" index="5" instance=ExtResource( 12 )]
+position = Vector2( 1122.71, 475.918 )
+
+[node name="MonedaBronce5" parent="Monedas" index="6" instance=ExtResource( 12 )]
+position = Vector2( 1070.71, 539.918 )
+
+[node name="MonedaBronce2" parent="Monedas" index="7" instance=ExtResource( 12 )]
+position = Vector2( 1439.76, 346.354 )
+
+[node name="MonedaBronce3" parent="Monedas" index="8" instance=ExtResource( 12 )]
+position = Vector2( 1516.38, 346.354 )
+
+[node name="ZanahoriaLlave" parent="Zanahorias" index="0" instance=ExtResource( 3 )]
+position = Vector2( 1845.71, 515.39 )
+
+[node name="ZanahoriaLlave2" parent="Zanahorias" index="1" instance=ExtResource( 3 )]
+position = Vector2( 2076.94, 364.98 )
+
+[node name="PlataformaTrampa" parent="PlataformaTrap" index="0" instance=ExtResource( 9 )]
+position = Vector2( 65.516, 713.115 )
+
+[node name="Pinchos" parent="Pinchos2" index="0" instance=ExtResource( 13 )]
+position = Vector2( 2341.78, 588.855 )
+
+[node name="Pinchos2" parent="Pinchos2" index="1" instance=ExtResource( 13 )]
+position = Vector2( 2149.44, 283.385 )
+es_trampa = true
+
+[node name="PlataformaImpulora" parent="." index="11" instance=ExtResource( 14 )]
+position = Vector2( 1843.71, 601.39 )
+
+[node name="Portal" parent="." index="12" instance=ExtResource( 5 )]
+position = Vector2( 2522.98, 537.431 )
+proximo_nivel = "res://juego/niveles/Nivel4.tscn"
+
+[node name="Saltarina" parent="." index="13" instance=ExtResource( 4 )]
+position = Vector2( 566.36, 512.421 )
+
+[node name="Cutscene" type="Node" parent="." index="14"]
+
+[node name="Camera2D" type="Camera2D" parent="Cutscene" index="0"]
+position = Vector2( 1872.52, 478.516 )
+zoom = Vector2( 1.6, 1.6 )
+script = ExtResource( 15 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscene" index="1"]
+anims/show = SubResource( 1 )
+
+[connection signal="animation_finished" from="Cutscene/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
