@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shoot_rayo.wav-3d29e7905f9a1b0b4a5845672268d937.sample"
+
+[deps]
+
+source_file="res://Recursos/sfx/shoot_rayo.wav"
+dest_files=[ "res://.import/shoot_rayo.wav-3d29e7905f9a1b0b4a5845672268d937.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

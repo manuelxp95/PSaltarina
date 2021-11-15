@@ -1,0 +1,149 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Recursos/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://juego/Menus/Botones/BotonMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/Menus/Botones/BotonSalir.gd" type="Script" id=3]
+[ext_resource path="res://juego/Menus/MenuGameOver.gd" type="Script" id=4]
+[ext_resource path="res://Recursos/Players/bunny2_hurt.png" type="Texture" id=5]
+[ext_resource path="res://Recursos/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.54902, 0.243137, 0.317647, 1 )
+border_width_left = 6
+border_width_bottom = 6
+border_color = Color( 0.505882, 0.501961, 0.501961, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.388235, 0.0509804, 0.0980392, 1 )
+border_width_left = 6
+border_width_bottom = 6
+border_color = Color( 0.137255, 0.129412, 0.129412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.584314, 0.439216, 0.717647, 1 )
+border_width_bottom = 6
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 60
+outline_color = Color( 0.72549, 0.0705882, 0.937255, 1 )
+font_data = ExtResource( 6 )
+
+[node name="MenuGameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -13.4387
+margin_top = -9.5509
+margin_right = 1298.56
+margin_bottom = 748.449
+color = Color( 0.0745098, 0.266667, 0.454902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bunny2_hurt" type="Sprite" parent="."]
+position = Vector2( 328.032, 370.337 )
+texture = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -488.28
+margin_top = -526.106
+margin_right = -145.28
+margin_bottom = -118.106
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonReintentar" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 343.0
+margin_bottom = 114.0
+text = "Reintentar"
+
+[node name="BotonMenuPrincipal" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 134.0
+margin_right = 343.0
+margin_bottom = 249.0
+text = "Menu Principal"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 269.0
+margin_right = 343.0
+margin_bottom = 273.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonSalir" type="Button" parent="VBoxContainer"]
+margin_top = 293.0
+margin_right = 343.0
+margin_bottom = 408.0
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
+text = "SALIR"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -131.846
+margin_top = -307.03
+margin_right = 608.154
+margin_bottom = -200.03
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -372.0
+margin_top = -59.5
+margin_right = 373.0
+margin_bottom = 63.5
+color = Color( 0.722656, 0.722656, 0.722656, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+modulate = Color( 0.929412, 0.286275, 0.286275, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -217.5
+margin_right = 217.5
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 7 )
+text = "GAMER OVER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/BotonReintentar" to="." method="_on_BotonReintentar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonMenuPrincipal" to="." method="_on_BotonMenuPrincipal_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonSalir" to="VBoxContainer/BotonSalir" method="_on_pressed"]

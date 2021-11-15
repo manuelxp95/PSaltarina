@@ -1,0 +1,104 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://juego/plataformas/PlataformaLargaPiedra.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/personaje/Saltarina.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/Menus/MenuPausa.gd" type="Script" id=3]
+[ext_resource path="res://Recursos/Background/bg_layer1.png" type="Texture" id=4]
+[ext_resource path="res://Recursos/Background/bg_layer2.png" type="Texture" id=5]
+[ext_resource path="res://Recursos/Background/bg_layer4.png" type="Texture" id=6]
+[ext_resource path="res://Recursos/Background/bg_layer3.png" type="Texture" id=7]
+[ext_resource path="res://juego/Menus/MenuPausa.tscn" type="PackedScene" id=8]
+[ext_resource path="res://juego/HUD/HUD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://juego/Pinchos.tscn" type="PackedScene" id=10]
+[ext_resource path="res://juego/HUD/HUD.gd" type="Script" id=11]
+[ext_resource path="res://juego/niveles/Nivel.gd" type="Script" id=12]
+
+[node name="NivelTemporal" type="Node"]
+script = ExtResource( 12 )
+nivel_actual = "res://juego/niveles/NivelTemporal.tscn"
+
+[node name="PlataformaLargaPiedra" parent="." instance=ExtResource( 1 )]
+position = Vector2( 402, 406 )
+
+[node name="Saltarina" parent="." instance=ExtResource( 2 )]
+position = Vector2( 214, 366 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, -500 )
+
+[node name="ParallaxFondo" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxFondo"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesLejanas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesLejanas"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesMedias" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesMedias"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesCercanas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesCercanas"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CapaFrente" type="CanvasLayer" parent="."]
+
+[node name="MenuPausa" type="Control" parent="CapaFrente" instance=ExtResource( 8 )]
+pause_mode = 2
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -641.498
+margin_top = -336.027
+margin_right = 638.502
+margin_bottom = 383.973
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD" type="Control" parent="CapaFrente" instance=ExtResource( 9 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 152.524, 22.3099 ],
+"_edit_use_anchors_": false
+}
+
+[node name="Pinchos" parent="." instance=ExtResource( 10 )]
+position = Vector2( 465.777, 370.855 )

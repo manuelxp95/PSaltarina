@@ -1,0 +1,23 @@
+-->Barra de vida -V-
+	-->Sonido shake -V-
+-->Spawn de bichos -V-
+-->Muerte boss/animacion -V-
+-->Sprites/muerte/idle -V-
+-->Damage boss al jugador
+	-->PowerUps Reaparicion -V-
+	-->Expulse al jugador luego de un golpe -V-
+		-->Animacion expulcion -V-
+	-->Ataque rayo -?
+	-->Animacion boss muerto -?
+		-->cortar musica -V-
+-->Muerte durante el boss
+	-->Reaparecer en boss -V-
+	-->Musica -V-
+-->Niveles del 3 - 9 -V-
+	-->Colores de los mapas a partir del 7 -V-
+	-->Agregar cutscene -X
+-->Arreglar lvl 10 -V-
+
+
+--> cutscene 1 vez
+--> camara lvl 9

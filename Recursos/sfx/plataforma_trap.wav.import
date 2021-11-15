@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/plataforma_trap.wav-4d7f3b85b9434b9a7405b4c7772c0047.sample"
+
+[deps]
+
+source_file="res://Recursos/sfx/plataforma_trap.wav"
+dest_files=[ "res://.import/plataforma_trap.wav-4d7f3b85b9434b9a7405b4c7772c0047.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

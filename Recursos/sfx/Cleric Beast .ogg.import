@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Cleric Beast .ogg-212a27c44b7ce77e814a73bc2d0e20b4.oggstr"
+
+[deps]
+
+source_file="res://Recursos/sfx/Cleric Beast .ogg"
+dest_files=[ "res://.import/Cleric Beast .ogg-212a27c44b7ce77e814a73bc2d0e20b4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
