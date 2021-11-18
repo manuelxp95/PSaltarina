@@ -262,8 +262,5 @@ __meta__ = {
 
 [connection signal="pressed" from="VBoxContainer/BotonIniciar" to="." method="_on_BotonIniciar_pressed"]
 [connection signal="pressed" from="VBoxContainer/BotonNiveles" to="." method="_on_BotonIniciar_pressed"]
-<<<<<<< HEAD
-=======
 [connection signal="pressed" from="VBoxContainer/BotonNiveles" to="." method="_on_BotonNiveles_pressed"]
->>>>>>> main
 [connection signal="pressed" from="VBoxContainer/BotonSalir" to="VBoxContainer/BotonSalir" method="_on_pressed"]
