@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 
 DatosPlayer="*res://juego/autoload/datosPlayer.gd"
 MusicaGlobal="*res://juego/autoload/MusicaGlobal.tscn"
+SaveMaster="*res://juego/niveles/SaveMaster.gd"
 
 [debug]
 
