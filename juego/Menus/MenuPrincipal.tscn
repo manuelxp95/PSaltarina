@@ -66,6 +66,10 @@ tracks/3/keys = {
 "values": [ 0.0, 0.0, -180.0, -360.0, -360.0 ]
 }
 
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = ExtResource( 3 )
+
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.54902, 0.243137, 0.317647, 1 )
 border_width_left = 6
@@ -82,10 +86,6 @@ border_color = Color( 0.137255, 0.129412, 0.129412, 1 )
 bg_color = Color( 0.584314, 0.439216, 0.717647, 1 )
 border_width_bottom = 6
 border_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 20
-font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 60
@@ -154,10 +154,10 @@ margin_top = 262.0
 margin_right = 405.0
 margin_bottom = 374.0
 size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
 text = "SALIR"
 script = ExtResource( 5 )
 __meta__ = {
@@ -261,6 +261,5 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="VBoxContainer/BotonIniciar" to="." method="_on_BotonIniciar_pressed"]
-[connection signal="pressed" from="VBoxContainer/BotonNiveles" to="." method="_on_BotonIniciar_pressed"]
 [connection signal="pressed" from="VBoxContainer/BotonNiveles" to="." method="_on_BotonNiveles_pressed"]
 [connection signal="pressed" from="VBoxContainer/BotonSalir" to="VBoxContainer/BotonSalir" method="_on_pressed"]

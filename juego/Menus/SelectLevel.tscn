@@ -9,6 +9,9 @@
 [ext_resource path="res://juego/Menus/SelectLevel.gd" type="Script" id=7]
 [ext_resource path="res://Recursos/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=8]
 
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 8 )
+
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 980, 980 )
@@ -22,9 +25,6 @@ modulate_color = Color( 0.164706, 0.164706, 0.164706, 1 )
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 980, 980 )
-
-[sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 8 )
 
 [node name="SelectLevel" type="Control"]
 anchor_right = 1.0
@@ -208,14 +208,23 @@ self_modulate = Color( 0.584314, 0.439216, 0.717647, 1 )
 margin_right = 986.0
 margin_bottom = 986.0
 size_flags_vertical = 3
+custom_fonts/font = SubResource( 4 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 4 )
 text = "texto"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [connection signal="pressed" from="MarginContainer/GridContainer/Botonlvl1" to="." method="_on_Botonlvl1_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Botonlvl2" to="." method="_on_Botonlvl2_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Botonlvl3" to="." method="_on_Botonlvl3_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Botonlvl4" to="." method="_on_Botonlvl4_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Botonlvl5" to="." method="_on_Botonlvl5_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Botonlvl6" to="." method="_on_Botonlvl6_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Botonlvl7" to="." method="_on_Botonlvl7_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Botonlvl8" to="." method="_on_Botonlvl8_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Botonlvl9" to="." method="_on_Botonlvl9_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Botonlvl10" to="." method="_on_Botonlvl10_pressed"]
 [connection signal="pressed" from="VBoxContainer/BotonMenu" to="." method="_on_BotonMenu_pressed"]

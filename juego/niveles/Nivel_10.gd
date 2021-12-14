@@ -17,6 +17,7 @@ onready var cutscene_boss=$Cutscene/Camera2D
 onready var hud_life= $CapaFrente/HUD/Lifebar
 
 func _ready():
+	save_level()
 	#-------Nivel 10 conexiones -------
 	if nivel_actual == "res://juego/niveles/Nivel10.tscn":
 		deshabilitar_pared(true)
@@ -36,7 +37,6 @@ func _ready():
 
 func _process(_delta):
 	nubes_lejanas.motion_offset.x -=0.3
-
 
 
 func numero_llaves_nivel():
@@ -110,7 +110,7 @@ func boss_muerte(jugador):
 	jugador.puede_moverse=true
 	jugador.animacion_personaje.play("default")
 	MusicaGlobal.replay()
-	
+
 
 func expulsar_jugador(jugador):
 	jugador.expulsado($Trigger/PosicionRespawn.global_position)
@@ -118,3 +118,8 @@ func expulsar_jugador(jugador):
 
 func respawn_boss():
 	player.batalla_boss=$Trigger/PosicionRespawn.global_position
+
+func save_level():
+	if SaveMaster.data["MaxLevel"] < 10:
+		SaveMaster.data["MaxLevel"] +=1
+		SaveMaster.save_data()

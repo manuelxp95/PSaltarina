@@ -22,4 +22,4 @@ func play_animacion():
 	esta_activado=true
 	$AnimatedSprite.play("default")
 	$AnimationPlayer.play("activado")
-	
+

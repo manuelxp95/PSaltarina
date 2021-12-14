@@ -2,7 +2,7 @@ extends Node
 signal abrir_portal()
 
 export var menu_game_over = "res://juego/Menus/MenuGameOver.tscn"
-export var nivel_actual ="res://juego/niveles/Nivel10.tscn"
+export var nivel_actual =""
 
 var numero_llaves = 0
 var contenedor_llaves 
@@ -14,6 +14,7 @@ onready var cutscene=$Cutscene/Camera2D
 onready var hud_life= $CapaFrente/HUD/Lifebar
 
 func _ready():
+	save_level(nivel_actual)
 	hud_life.set_deferred("visible",false)
 	if DatosPlayer.cinematica == false:
 		deshabilitar_jugador(false)
@@ -59,3 +60,13 @@ func deshabilitar_jugador(camara_actual):
 func _on_AnimationPlayer_animation_finished(anim_name):
 	deshabilitar_jugador(true)
 	DatosPlayer.cinematica = true
+
+
+#save
+func save_level(nivel_actual) -> void:
+	var nro_lvl= nivel_actual.substr(25,1)
+	if SaveMaster.data["MaxLevel"]< int(nro_lvl):
+		SaveMaster.data["MaxLevel"] +=1
+		SaveMaster.save_data()
+		print(SaveMaster.data["MaxLevel"])
+	

@@ -186,6 +186,7 @@ collision_mask = 2
 [node name="ParedeNiebla" type="CollisionShape2D" parent="Trigger/ParedIzq" index="0"]
 position = Vector2( 3297.82, -324.532 )
 shape = SubResource( 2 )
+disabled = true
 
 [node name="Particles2D" type="Particles2D" parent="Trigger/ParedIzq" index="1"]
 position = Vector2( 3297.51, 266.814 )
